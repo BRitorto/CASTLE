@@ -11,7 +11,7 @@
 */
 
 %token <string> 
-%token <node> EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN LPAREN RPAREN LBRACK RBRACK COMMA DOT PLUS MINUS MULT DIV
+%token <node> EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN LPAREN RPAREN LBRACK RBRACK COMMA DOT PLUS MINUS MULT DIV MOD
 
 
 /* Define the type of node our nonterminal symbols represent. The types refer to the %union declaration above. 
