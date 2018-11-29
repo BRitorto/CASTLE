@@ -1,1 +1,23 @@
 imprimir "Hola";
+
+si (1==2)
+{
+	imprimir "Son iguales";
+} 
+sino
+{
+	imprimir "Son distintos";
+}
+
+entero a = 1;
+cadena bian = "Bian es la mejor";
+
+hacer
+{
+	imprimir "1";
+	a=a+1;
+	imprimir bian;
+}
+mientras (a<3);
+
+

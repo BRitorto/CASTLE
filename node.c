@@ -54,7 +54,7 @@ print_tree(Node * t){
 		set_info(t);
 
 		if(t->value == NULL){
-			printf("%s\n", "MALO");
+			printf("%s\n", "ERROR");
 		}else{
 			printf("%s",t->value );
 		}

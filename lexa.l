@@ -26,8 +26,8 @@ ws 				{delim}+
 "imprimir"		{return PRINT;}
 "verdadero"		{return TRUE;}
 "falso"			{return FALSE;}
-"entero"		{return INT;}
-"cadena"		{return STRING;}
+"entero"		{return INT_T;}
+"cadena"		{return STRING_T;}
 "="				{return EQUALS;} 
 "=="			{return EQUALSCMP;}
 "!="			{return DIFF;}
@@ -52,7 +52,7 @@ ws 				{delim}+
 					return STRING;
 				}
 
-{number}		{yylval.token = strtol(yytext, NULL, 10); 
+{number}		{yylval.integer = strtol(yytext, NULL, 10); 
 					return INT;
 				}
 

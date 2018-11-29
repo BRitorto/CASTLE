@@ -15,7 +15,7 @@ static Node * root;
 
 %union {
 	struct Node_t * node;
-	int token;
+	int integer;
 	char * string;
 }
 
@@ -24,7 +24,7 @@ static Node * root;
    they represent.
  */
 
-%token <token> 	INT
+%token <integer> INT
 %token <string> ID STRING
 %token <node> 	IF ELSE DO WHILE 
 				AND OR TRUE FALSE NOT
@@ -32,6 +32,7 @@ static Node * root;
 				EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN 
 				LPAREN RPAREN LBRACK RBRACK ENDLINE 
 				PLUS MINUS MULT DIV
+				INT_T STRING_T
 
 /* Define the type of node our nonterminal symbols represent.
    The types refer to the %union declaration above.
@@ -42,7 +43,7 @@ static Node * root;
 
 /* Operator precedence for mathematical operators */
 
-%right EQUALS
+%right EQUALS LETHAN GTHAN GETHAN LTHAN
 %left PLUS MINUS
 %left MULT DIV
 %left AND OR EQUALSCMP DIFF
@@ -93,8 +94,6 @@ statement	: ENDLINE
 					add_node($$, $6);
 					add_terminal_node($$, rbrack_);
 					add_terminal_node($$, else_);
-					add_terminal_node($$, lparen_);
-					add_terminal_node($$, rparen_);
 					add_terminal_node($$, lbrack_);
 					add_node($$, $10);
 					add_terminal_node($$, rbrack_);
@@ -110,20 +109,17 @@ statement	: ENDLINE
 					add_node($$, $6);
 					add_terminal_node($$, rbrack_);
 				}
-			| DO LBRACK statement RBRACK WHILE LPAREN expression RPAREN LBRACK statement RBRACK
+			| DO LBRACK statement RBRACK WHILE LPAREN expression RPAREN
 				{
 					$$=new_tree();
 					add_terminal_node($$, do_);
 					add_terminal_node($$, lbrack_);
-					add_node($$, $2);
+					add_node($$, $3);
 					add_terminal_node($$, rbrack_);
 					add_terminal_node($$, while_);
 					add_terminal_node($$, lparen_);
 					add_node($$, $7);
 					add_terminal_node($$, rparen_);
-					add_terminal_node($$, lbrack_);
-					add_node($$, $10);
-					add_terminal_node($$, rbrack_);
 				}
 			| definition ENDLINE
 				{
@@ -199,16 +195,16 @@ expression	: operand comparator operand
 				}
 			;
 
-definition : INT assignment
+definition : INT_T assignment
 				{
 					$$ = new_tree();
-					add_terminal_node($$, int_);
+					add_terminal_node($$, int_t_);
 					add_node($$, $2);
 				}
-			| STRING assignment
+			| STRING_T assignment
 				{
 					$$ = new_tree();
-					add_terminal_node($$, string_);
+					add_terminal_node($$, string_t_);
 					add_node($$, $2);
 				}
 			;

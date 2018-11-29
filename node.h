@@ -4,15 +4,17 @@ typedef enum token {
 
 		while_, do_, lparen_, rparen_, lbrack_, rbrack_, if_, else_, 
 		endline_, equals_, or_, and_, not_, equalscmp_, diff_, lthan_,
-		 lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, string_,  
-		 int_, new_,  print_,  true_, false_, id_,
+		 lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, string_t_,  
+		 int_t_, new_,  print_,  true_, false_, id_, int_, string_,
 
     //dummy
     root_,
 
     // Non terminals
     file_, statement_, definition_, assignment_,  type_, expression_, 
-    conjunction_, equality_, equop_, relation_, relop_, addition_,   addop_, term_, mulop_, factor_, unaryop_, primary_, fuint_, fustring_, reint_, restring_, operand_, boperator,
+    conjunction_, equality_, equop_, relation_, relop_, addition_,   
+    addop_, term_, mulop_, factor_, unaryop_, primary_, fuint_, 
+    fustring_, reint_, restring_, operand_, boperator,
 
 } token;
 
