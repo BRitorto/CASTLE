@@ -213,13 +213,11 @@ definition : INT assignment
 				}
 			;
 
-print 		: PRINT LPAREN arguments RPAREN
+print 		: PRINT arguments
 				{
 					$$ = new_tree();
 					add_terminal_node($$, print_);
-					add_terminal_node($$, lparen_);
-					add_node($$, $3);
-					add_terminal_node($$, rparen_);
+					add_node($$, $2);
 					$$->token = print_;
 				}
 			;
