@@ -2,7 +2,7 @@
 
 typedef enum token {
 
-		while_, lparen_, rparen_, lbrack_, rbrack_, if_, else_, end_line_, equal_, or_, and_, equalscmp_, diff_, lthan_, lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, string_,  int_, new_,  print_,  true_, false_,int_, string_,  scan_,
+		while_, do_, lparen_, rparen_, lbrack_, rbrack_, if_, else_, endline_, equal_, or_, and_, not_, equalscmp_, diff_, lthan_, lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, string_,  int_, new_,  print_,  true_, false_,int_, string_,  scan_,
 
     //dummy
     root_,
@@ -12,7 +12,7 @@ typedef enum token {
 
 } token;
 
-static char * tokens[255] = {"while", "(", ")", "{\n", "}\n", "if", "else", ";\n", "=", "||", "&&", ".equals(", "!", "<", "<=", ">", ">=", "+", "-", "*", "/", "String ", "Integer ", "new ", "syso", "(new Integer(1).equals(1)) ", "(new Integer(1).equals(0))"};
+static char * tokens[255] = {"while", "do", "(", ")", "{\n", "}\n", "if", "else", ";\n", "=", "||", "&&", "!", ".equals(", "!", "<", "<=", ">", ">=", "+", "-", "*", "/", "String ", "Integer ", "new ", "syso", "(new Integer(1).equals(1)) ", "(new Integer(1).equals(0))"};
 
 typedef struct Node_t {
 	struct Node_t ** children;

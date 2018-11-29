@@ -1,20 +1,22 @@
 %{
-// This code is copied directly 
+
 #include <stdio.h>
+#include "y.tab.h"
 
-}%
+%}
 
-delim	[ \t\n]
-ws 		{delim}+
-letter 	[a-zA-z]
-digit 	[0-9]
-word	{letter}({letter}|digit)*
-number 	{digit}+
+letter 			[a-zA-z]
+digit 			[0-9]
+word			{letter}({letter}|digit)*
+number 			{digit}+
+delim			[ \t\n]
+ws 				{delim}+
+
 
 %%
 
-#.* {/* comments, does nothing */}
-[\t\n]		;
+#.* 			{/* comments, does nothing */}
+{ws}			{/* no action */}
 "si"			{return IF;}
 "sino"			{return ELSE;}
 "hacer"			{return DO;}
@@ -29,23 +31,36 @@ number 	{digit}+
 "="				{return EQUALS;} 
 "=="			{return EQUALSCMP;}
 "!="			{return DIFF;}
+"!"				{return NOT;}
 "<"				{return LTHAN;}
 "<="			{return LETHAN;}
 ">"				{return GTHAN;}
 ">="			{return GETHAN;}
-"("				{return LPAREN;}
-")"				{return RPAREN;}
-"{"				{return LBRACK;}
-"}"				{return RBRACK;}
-"."				{return DOT;}
-","				{return COMMA;}
+\(				{return LPAREN;}
+\)				{return RPAREN;}
+\{				{return LBRACK;}
+\}				{return RBRACK;}
 "+"				{return PLUS;}
 "-"				{return MINUS;}
 "*"				{return MULT;}
-"/"				{return DIV;}
-";"         	{return END_LINE;}
-.				printf("Unkown token!\n"); 
-				yyterminate();
+\/				{return DIV;}
+\;         		{return ENDLINE;}
+
+\".*\"			{char * text = malloc(strlen(yytext)+1);
+					strcpy(text, yytext);
+					yylval.s = text;
+					return STRING;
+				}
+
+{number}		{yylval.i = strtol(yytext, NULL, 10); 
+					return INT;
+				}
+
+{word}			{char * text = malloc(strlen(yytext)+1);
+					strcpy(text, yytext);
+					yylval.s = text; 
+					return ID;
+				}
 %%
 
 
@@ -53,6 +68,7 @@ number 	{digit}+
 *   another thing is processed. If 1 is returned, it indicates for the
 *   program to finish
 **/
+
 int yywrap(void)
 {
 	return 1;
