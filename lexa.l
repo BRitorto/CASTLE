@@ -48,17 +48,17 @@ ws 				{delim}+
 
 \".*\"			{char * text = malloc(strlen(yytext)+1);
 					strcpy(text, yytext);
-					yylval.s = text;
+					yylval.string = text;
 					return STRING;
 				}
 
-{number}		{yylval.i = strtol(yytext, NULL, 10); 
+{number}		{yylval.token = strtol(yytext, NULL, 10); 
 					return INT;
 				}
 
 {word}			{char * text = malloc(strlen(yytext)+1);
 					strcpy(text, yytext);
-					yylval.s = text; 
+					yylval.string = text; 
 					return ID;
 				}
 %%

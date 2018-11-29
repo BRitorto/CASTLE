@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "treenode.h"
+#include "node.h"
 
 extern int yylex();
 static Node * root;
@@ -14,7 +14,7 @@ static Node * root;
 */
 
 %union {
-	Node * node;
+	struct Node_t * node;
 	int token;
 	char * string;
 }
@@ -30,7 +30,7 @@ static Node * root;
 				AND OR TRUE FALSE NOT
 				PRINT 
 				EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN 
-				LPAREN RPAREN LBRACK RBRACK COMMA DOT ENDLINE 
+				LPAREN RPAREN LBRACK RBRACK ENDLINE 
 				PLUS MINUS MULT DIV
 
 /* Define the type of node our nonterminal symbols represent.
@@ -219,7 +219,7 @@ print 		: PRINT LPAREN arguments RPAREN
 					add_terminal_node($$, print_);
 					add_terminal_node($$, lparen_);
 					add_node($$, $3);
-					add_terminal_node($$, rparen);
+					add_terminal_node($$, rparen_);
 					$$->token = print_;
 				}
 			;
@@ -239,7 +239,7 @@ operand		: INT
 			| ID
 				{
 					$$ = new_tree();
-					add_terminal_node_with_value($$, id_ $1);
+					add_terminal_node_with_value($$, id_, $1);
 				}
 			| operand operator operand
 				{
@@ -354,7 +354,7 @@ int main()
 	return 0;
 }
 
-int yyerror(char * s) 
+int yyerror(const char * s) 
 {
 	fprintf(stderr, "%s\n", s);
 	return 0;

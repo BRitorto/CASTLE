@@ -86,7 +86,7 @@ print_tree(Node * t){
 
 		break;
 
-		case ne_:
+		case diff_:
 			putchar('!');
 
 			//no pongo break !!
@@ -106,12 +106,12 @@ print_tree(Node * t){
 			printf("%s", ")");
 			break;
 
-		case scan_:
+		/*case scan_:
 
 			print_tree(t->children[1]);
 			printf("%s", "= scan.nextLine()");
 
-		break;
+		break;*/
 
 
 		default:
