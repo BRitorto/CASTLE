@@ -68,7 +68,7 @@ print_tree(Node * t){
 
 		case and_:
 
-			printf("%s", "BasicOperations.intersection(");
+			printf("%s", "BasicOperations.intersection()");
 			print_tree(t->children[0]);
 			putchar(',');
 			print_tree(t->children[2]);
@@ -78,7 +78,7 @@ print_tree(Node * t){
 
 		case or_:
 
-			printf("%s", "BasicOperations.union(");
+			printf("%s", "BasicOperations.union()");
 			print_tree(t->children[0]);
 			putchar(',');
 			print_tree(t->children[2]);
@@ -101,7 +101,7 @@ print_tree(Node * t){
 
 
 		case print_:
-			printf("%s","System.out.println(" );
+			printf("%s","System.out.println()" );
 			print_tree(t->children[1]);
 			printf("%s", ")");
 			break;
@@ -149,7 +149,7 @@ set_info(Node * t) {
 
 	if(t->token == int_) {
 
-		char * text = "new Integer(";
+		char * text = "new Integer()";
 		char * aux = t->value;
 		t->value = malloc(strlen(text) + strlen(t->value) + 3);
 		sprintf(t->value, "new Integer(%s)", aux);

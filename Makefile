@@ -9,7 +9,7 @@ lex.yy.c: lexa.l
 	@flex lexa.l 2> /dev/null
 
 compiler: 
-	@gcc -o castle lex.yy.c y.tab.c node.c
+	@gcc -o castle lex.yy.c y.tab.c node.c 2> /dev/null
 	@make clean
 
 clean:

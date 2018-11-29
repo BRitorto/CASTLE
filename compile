@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cat $1 | ./castle > Main.java 
+rm -f comperrors 
+rm -f Main.class
+javac -cp $tla-2018b-01 Main.java 2> ./comperrors
+
+if [ ! -f Main.class  ]; then
+    echo "Syntax Error. See more at comperrors"
+fi
+rm -f Main.java
