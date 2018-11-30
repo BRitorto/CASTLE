@@ -133,8 +133,7 @@ print_program(Node * t){
 
 void
 print_headers() {
-	char * headers = "import java.util.Scanner;
-										public class Main { public static void main(String[] args) {";
+	char * headers = "import java.util.Scanner; public class Main { public static void main(String[] args) {";
 	printf("%s",headers);
 	printf("%s\n","Scanner scan = new Scanner(System.in);");
 }

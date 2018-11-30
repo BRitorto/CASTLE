@@ -4,8 +4,8 @@ typedef enum token {
 
 		while_, do_, lparen_, rparen_, lbrack_, rbrack_, if_, else_,
 		endline_, equals_, or_, and_, not_, equalscmp_, diff_, lthan_,
-		 lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, string_t_,
-		 int_t_, new_,  print_, id_, int_, string_,
+		 lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, mod_, string_t_,
+		 int_t_, new_,  print_,  true_, false_, id_, int_, string_,
 
     //dummy
     root_,
@@ -18,7 +18,7 @@ typedef enum token {
 
 } token;
 
-static char * tokens[255] = {"while", "do", "(", ")", "{\n", "}\n", "if", "else", ";\n", "=", "||", "&&", "!", ".equals(", "!", "<", "<=", ">", ">=", "+", "-", "*", "/", "String ", "Integer ", "new ", "syso"};
+static char * tokens[255] = {"while", "do", "(", ")", "{\n", "}\n", "if", "else", ";\n", "=", "||", "&&", "!", ".equals(", "!", "<", "<=", ">", ">=", "+", "-", "*", "/", "%", "String ", "Integer ", "new ", "syso", "(new Integer(1).equals(1)) ", "(new Integer(1).equals(0))"};
 
 typedef struct Node_t{
 	struct Node_t ** children;

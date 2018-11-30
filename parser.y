@@ -10,7 +10,7 @@ static Node * root;
 
 %}
 
-/* Represents the many different ways we can access our data 
+/* Represents the many different ways we can access our data
 */
 
 %union {
@@ -26,12 +26,12 @@ static Node * root;
 
 %token <integer> INT
 %token <string> ID STRING
-%token <node> 	IF ELSE DO WHILE 
+%token <node> 	IF ELSE DO WHILE
 				AND OR TRUE FALSE NOT
-				PRINT 
-				EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN 
-				LPAREN RPAREN LBRACK RBRACK ENDLINE 
-				PLUS MINUS MULT DIV
+				PRINT
+				EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN
+				LPAREN RPAREN LBRACK RBRACK ENDLINE
+				PLUS MINUS MULT DIV MOD
 				INT_T STRING_T
 
 /* Define the type of node our nonterminal symbols represent.
@@ -52,7 +52,7 @@ static Node * root;
 
 %%
 
-program 	: statement 
+program 	: statement
 				{
 					root = $1;
 					print_program(root);
@@ -160,7 +160,7 @@ expression	: operand comparator operand
 					$$ = new_tree();
 					add_terminal_node($$, not_);
 					add_node($$, $2);
-				}	
+				}
 			| LPAREN expression RPAREN AND LPAREN expression RPAREN
 				{
 					$$ = new_tree();
@@ -304,37 +304,37 @@ arguments 	: expression
 				{
 					$$ = new_tree();
 					add_node($$, $1);
-				}	
+				}
 			;
 
 operator 	: PLUS
 				{
 					$$ = new_tree();
 					add_terminal_node($$, plus_);
-				} 
-			| MINUS 
+				}
+			| MINUS
 				{
 					$$ = new_tree();
 					add_terminal_node($$, minus_);
-				} 
-			| AND 
+				}
+			| AND
 				{
 					$$ = new_tree();
 					add_terminal_node($$, and_);
 					$$->token = and_;
-				} 
-			| OR 
+				}
+			| OR
 				{
 					$$ = new_tree();
 					add_terminal_node($$, or_);
 					$$->token = or_;
-				} 
-			| MULT 
+				}
+			| MULT
 				{
 					$$ = new_tree();
 					add_terminal_node($$, mult_);
-				} 
-			| DIV 
+				}
+			| DIV
 				{
 					$$ = new_tree();
 					add_terminal_node($$, div_);
@@ -348,7 +348,7 @@ int main()
 	return 0;
 }
 
-int yyerror(const char * s) 
+int yyerror(const char * s)
 {
 	fprintf(stderr, "%s\n", s);
 	return 0;

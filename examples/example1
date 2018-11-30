@@ -1,14 +1,16 @@
 imprimir "Hola";
-
+imprimir "1 es igual a 2?";
 si (1==2)
 {
 	imprimir "Son iguales";
-} 
+}
 sino
 {
 	imprimir "Son distintos";
 }
 
+entero rta = 3%2;
+imprimir rta;
 entero a = 1;
 cadena bian = "Bian es la mejor";
 
@@ -19,5 +21,3 @@ hacer
 	imprimir bian;
 }
 mientras (a<3);
-
-

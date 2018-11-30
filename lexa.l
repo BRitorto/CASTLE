@@ -24,6 +24,8 @@ ws 				{delim}+
 "y"				{return AND;}
 "o"				{return OR;}
 "imprimir"		{return PRINT;}
+"verdadero"		{return TRUE;}
+"falso"			{return FALSE;}
 "entero"		{return INT_T;}
 "cadena"		{return STRING_T;}
 "="				{return EQUALS;}
@@ -42,6 +44,7 @@ ws 				{delim}+
 "-"				{return MINUS;}
 "*"				{return MULT;}
 \/				{return DIV;}
+"%"				{return MOD;}
 \;         		{return ENDLINE;}
 
 \".*\"			{char * text = malloc(strlen(yytext)+1);
