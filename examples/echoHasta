@@ -1,0 +1,9 @@
+imprimir "Ingrese salir para terminar el echo";
+
+cadena lectura = "";
+leer lectura;
+mientras(lectura != "salir")
+{
+  imprimir lectura;
+  leer lectura;
+}

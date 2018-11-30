@@ -4,7 +4,7 @@ imprimir "Primer natural cuyo factorial divide a N =" + n;
 entero fact = 1;
 entero i = 1;
 entero aux = fact % n;
-mientras(i < n y ) {
+mientras((i < n) y (aux != 0)) {
     fact = fact * i;
     i = i + 1;
     aux = fact % n;
