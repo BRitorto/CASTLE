@@ -1,0 +1,13 @@
+entero n = 10;
+imprimir "Primer natural cuyo factorial divide a N =" + n;
+
+entero fact = 1;
+entero i = 1;
+entero aux = fact % n;
+mientras(i < n y ) {
+    fact = fact * i;
+    i = i + 1;
+    aux = fact % n;
+}
+
+imprimir i;

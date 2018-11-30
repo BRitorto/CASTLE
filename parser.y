@@ -45,7 +45,7 @@ static Node * root;
 
 %right EQUALS LETHAN GTHAN GETHAN LTHAN
 %left PLUS MINUS
-%left MULT DIV
+%left MULT DIV MOD
 %left AND OR EQUALSCMP DIFF
 
 %start program
@@ -338,6 +338,11 @@ operator 	: PLUS
 				{
 					$$ = new_tree();
 					add_terminal_node($$, div_);
+				}
+			| MOD
+				{
+					$$ = new_tree();
+					add_terminal_node($$, mod_);
 				}
 			;
 %%

@@ -1,6 +1,6 @@
 imprimir "Hola";
 imprimir "1 es igual a 2?";
-si (1==2)
+si (1==2 y 2==2)
 {
 	imprimir "Son iguales";
 }
@@ -9,7 +9,7 @@ sino
 	imprimir "Son distintos";
 }
 
-entero rta = 3%2;
+entero rta = 10%5;
 imprimir rta;
 entero a = 1;
 cadena bian = "Bian es la mejor";
