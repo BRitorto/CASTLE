@@ -28,7 +28,7 @@ static Node * root;
 %token <string> ID STRING
 %token <node> 	IF ELSE DO WHILE
 				AND OR TRUE FALSE NOT
-				PRINT
+				PRINT SCAN
 				EQUALS EQUALSCMP DIFF LTHAN LETHAN GTHAN GETHAN
 				LPAREN RPAREN LBRACK RBRACK ENDLINE
 				PLUS MINUS MULT DIV MOD
@@ -38,7 +38,7 @@ static Node * root;
    The types refer to the %union declaration above.
  */
 
-%type <node> statement expression definition assignment print operand comparator arguments operator
+%type <node> statement expression definition assignment print operand comparator arguments operator scan
 
 
 /* Operator precedence for mathematical operators */
@@ -139,6 +139,12 @@ statement	: ENDLINE
 					add_node($$, $1);
 					add_terminal_node($$, endline_);
 				}
+			| scan ENDLINE
+				{
+					$$ = new_tree();
+					add_node($$, $1);
+					add_terminal_node($$, endline_);
+				}
 			| expression ENDLINE
 				{
 					$$ = new_tree();
@@ -215,6 +221,15 @@ print 		: PRINT arguments
 					add_terminal_node($$, print_);
 					add_node($$, $2);
 					$$->token = print_;
+				}
+			;
+
+scan 		: SCAN ID
+				{
+					$$ = new_tree();
+					add_terminal_node($$, scan_);
+					add_terminal_node_with_value($$, id_, $2);
+					$$->token = scan_;
 				}
 			;
 

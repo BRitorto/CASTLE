@@ -99,19 +99,17 @@ print_tree(Node * t){
 
 		break;
 
-
 		case print_:
 			printf("%s","System.out.println(");
 			print_tree(t->children[1]);
 			printf("%s", ")");
 			break;
 
-		/*case scan_:
-
+		case scan_:
 			print_tree(t->children[1]);
 			printf("%s", "= scan.nextLine()");
 
-		break;*/
+		break;
 
 
 		default:

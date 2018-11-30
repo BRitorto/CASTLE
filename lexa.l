@@ -24,6 +24,7 @@ ws 				{delim}+
 "y"				{return AND;}
 "o"				{return OR;}
 "imprimir"		{return PRINT;}
+"leer"			{return SCAN;}
 "verdadero"		{return TRUE;}
 "falso"			{return FALSE;}
 "entero"		{return INT_T;}

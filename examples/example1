@@ -1,6 +1,6 @@
 imprimir "Hola";
 imprimir "1 es igual a 2?";
-si (1==2 y 2==2)
+si ((1==2) y (1==2))
 {
 	imprimir "Son iguales";
 }
@@ -21,3 +21,6 @@ hacer
 	imprimir bian;
 }
 mientras (a<3);
+
+cadena lectura = "";
+leer lectura;
