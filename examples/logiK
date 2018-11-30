@@ -1,0 +1,10 @@
+imprimir "Operadores Logicos";
+
+si ( ((verdadero) o (falso)) y (5==(25/5)) )
+{
+  imprimir "lel";
+}
+sino
+{
+  imprimir "lol";
+}
