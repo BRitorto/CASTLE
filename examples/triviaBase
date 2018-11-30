@@ -1,0 +1,31 @@
+imprimir "Ingrese el siguiente numero que se encuentra en base 2 convertido a decimal";
+
+entero n = 1101;
+
+imprimir ">" + n;
+entero dec = 0;
+entero base = 1;
+entero aux = n;
+mientras(aux>0)
+{
+ entero  digito = aux % 10;
+ aux = aux / 10;
+
+ dec = dec + digito * base;
+ base = base * 2;
+}
+cadena s ="";
+s = s + dec;
+
+imprimir "Rta: ";
+cadena lectura = "";
+leer lectura;
+
+si (s == lectura)
+{
+  imprimir "Ganaste!";
+}
+sino
+{
+imprimir "Perdiste";
+}
