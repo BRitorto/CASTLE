@@ -24,11 +24,9 @@ ws 				{delim}+
 "y"				{return AND;}
 "o"				{return OR;}
 "imprimir"		{return PRINT;}
-"verdadero"		{return TRUE;}
-"falso"			{return FALSE;}
 "entero"		{return INT_T;}
 "cadena"		{return STRING_T;}
-"="				{return EQUALS;} 
+"="				{return EQUALS;}
 "=="			{return EQUALSCMP;}
 "!="			{return DIFF;}
 "!"				{return NOT;}
@@ -52,13 +50,13 @@ ws 				{delim}+
 					return STRING;
 				}
 
-{number}		{yylval.integer = strtol(yytext, NULL, 10); 
+{number}		{yylval.integer = strtol(yytext, NULL, 10);
 					return INT;
 				}
 
 {word}			{char * text = malloc(strlen(yytext)+1);
 					strcpy(text, yytext);
-					yylval.string = text; 
+					yylval.string = text;
 					return ID;
 				}
 %%

@@ -1,0 +1,21 @@
+imprimir "Potencia"
+entero a = 12;
+entero b = 2;
+entero rta = a;
+entero inc = a;
+entero i = 1;
+
+hacer
+{
+  entero j = 1;
+  hacer
+  {
+    rta = rta + inc;
+    j = j + 1;
+  }
+  mientras(j<a);
+  inc = rta;
+  i = i + 1;
+}
+mientras(i<b);
+imprimir rta;

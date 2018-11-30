@@ -1,0 +1,17 @@
+imprimir "Fibonacci";
+entero n = 15;
+entero a = 0;
+entero b = 1;
+entero c = 0;
+entero i = 2;
+
+hacer
+{
+   c = a + b;
+   a = b;
+   b = c;
+   i = i + 1;
+}
+mientras (i<=n);
+
+imprimir b;

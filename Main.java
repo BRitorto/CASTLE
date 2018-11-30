@@ -1,18 +1,20 @@
 import java.util.Scanner; public class Main { public static void main(String[] args) {Scanner scan = new Scanner(System.in);
-System.out.println("Hola");
-if(new Integer(1).equals(new Integer(2))){
-System.out.println("Son iguales");
-}
-else{
-System.out.println("Son distintos");
-}
-Integer a=new Integer(1);
-String bian="Bian es la mejor";
+Integer a=new Integer(12);
+Integer b=new Integer(2);
+Integer rta=a;
+Integer inc=a;
+Integer i=new Integer(1);
 do{
-System.out.println("1");
-a=a+new Integer(1);
-System.out.println(bian);
+Integer j=new Integer(1);
+do{
+rta=rta+inc;
+j=j+new Integer(1);
 }
-while(a<new Integer(3));
+while(j<a);
+inc=rta;
+i=i+new Integer(1);
+}
+while(i<b);
+System.out.println(rta);
 scan.close();
 }}
