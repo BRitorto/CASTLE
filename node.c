@@ -63,7 +63,6 @@ print_tree(Node * t){
 
 	}
 
-
 	switch(t->token){
 
 		case and_:
@@ -88,7 +87,6 @@ print_tree(Node * t){
 
 		case diff_:
 			putchar('!');
-
 			//no pongo break !!
 
 		case equalscmp_:
@@ -110,7 +108,6 @@ print_tree(Node * t){
 			printf("%s", "= scan.nextLine()");
 
 		break;
-
 
 		default:
 		{
@@ -155,9 +152,7 @@ set_info(Node * t) {
 	if(t->token == int_ || t->token == string_ || t->token == id_) {
 		return;
 	}
-
-
-
+	
 	t->value = tokens[t->token];
 }
 

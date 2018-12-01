@@ -1,13 +1,12 @@
-//credit to jefa lel
+//Credit: tree implementation from jefa repository
 
 typedef enum token {
 
-		while_, do_, lparen_, rparen_, lbrack_, rbrack_, if_, else_,
-		endline_, equals_, or_, and_, not_, equalscmp_, diff_, lthan_,
-		 lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, mod_, string_t_,
-		 int_t_, new_,  print_,  true_, false_, id_, int_, string_, scan_,
+	while_, do_, lparen_, rparen_, lbrack_, rbrack_, if_, else_,
+	endline_, equals_, or_, and_, not_, equalscmp_, diff_, lthan_,
+	lethan_, gthan_, gethan_, plus_, minus_, mult_, div_, mod_, string_t_,
+	int_t_, new_,  print_,  true_, false_, id_, int_, string_, scan_,
 
-    //dummy
     root_,
 
 } token;
