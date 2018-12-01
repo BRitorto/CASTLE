@@ -1,4 +1,4 @@
-imprimir "Potencia"
+imprimir "Potencia";
 entero a = 12;
 entero b = 2;
 entero rta = a;
