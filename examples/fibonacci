@@ -1,3 +1,4 @@
+#comentario de fibonacci no deberia imprimir "nada";
 imprimir "Fibonacci";
 entero n = 15;
 entero a = 0;

@@ -1,4 +1,4 @@
-//credit to jefa lel
+//Credit: tree implementation from jefa repository
 
 #include <stdio.h>
 #include <stdlib.h>
