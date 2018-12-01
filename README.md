@@ -1,29 +1,38 @@
 # CASTLE
 
-
-
 ## Construccion:
 -----------------------------
 
-Es posible construir el proyecto con
+El proyecto cuenta con un Makefile. Para utilizarlo, posicionarse dentro
+de /CASTLE y hacer:
 
 ```sh
 $ make
 ```
-Esto generara un binario llamado "castle" que sera utilizado para compilar los programas
+Así se genera el binario "castle" que será utilizado para compilar los programas.
 
 ## Compilacion y Ejecución de los programas:
 ----------------------------------
 
-Debe estar el binario "castle" presente en el directorio actual.
-Podra compilar sus programas con la ayuda del script "compile"
-incluido en el directorio raiz del presente repositorio, de la siguiente manera:
+Debe posicionarse dentro de la carpeta principal del proyecto 
+/CASTLE.
+Se pueden compilar sus programas de prueba con el script "compile"
+que se encuentra en el directorio raiz del repositorio.
+
 ```sh
 $ sh compile ./path/a/su/programa
 ```
-Lo anterior generara un archivo Main.class.
-Para ejecutar su programa facilitamos otro script de ayuda "run" que tambien estara
-disponible en el directorio raiz. Para utilizarlo ejecute:
+Por ejemplo, para correr alguno de nuestros ejemplos, haga:
+
+```sh
+$ sh compile ./examples/triviaBase
+```
+
+Lo anterior generara un archivo Main.class ya que el lenguaje traduce a JAVA.
+Para ejecutar el programa, puede utilizar el otro script "run" que también
+está presente en el directorio raiz, por lo que deberá estar posicionado una vez más
+dentro de /CASTLE. Para utilizarlo ejecute:
+
 ```sh
 $ sh run
 ```
@@ -32,11 +41,13 @@ $ sh run
 ----------------------------
 
 - Libreria dk.brics.automaton con licencia MIT disponible en: <https://github.com/cs-au-dk/dk.brics.automaton>
+- Tener instalado el jdk correspondiente
 
 ## Ubicacion de los materiales
 ----------------------------
+
 * Informe TPE: Se encuentra en la raiz del proyecto con el nombre: "Informe TPE.pdf"
-* Programas ejemplo: Se encuentran en la carpeta ejemplos
+* Programas ejemplo: Se encuentran en la carpeta "examples"
 * Los scripts de ayuda "compiler" y "run" se encuentran en la raiz del proyecto
 
 ## Autores
