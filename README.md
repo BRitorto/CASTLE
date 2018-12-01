@@ -14,7 +14,7 @@ Así se genera el binario "castle" que será utilizado para compilar los program
 ## Compilacion y Ejecución de los programas:
 ----------------------------------
 
-Debe posicionarse dentro de la carpeta principal del proyecto 
+Debe posicionarse dentro de la carpeta principal del proyecto
 /CASTLE.
 Se pueden compilar sus programas de prueba con el script "compile"
 que se encuentra en el directorio raiz del repositorio.
@@ -46,7 +46,7 @@ $ sh run
 ## Ubicacion de los materiales
 ----------------------------
 
-* Informe TPE: Se encuentra en la raiz del proyecto con el nombre: "Informe TPE.pdf"
+* Informe TPE: Se encuentra en la raiz del proyecto con el nombre: "Informe TLA.pdf"
 * Programas ejemplo: Se encuentran en la carpeta "examples"
 * Los scripts de ayuda "compiler" y "run" se encuentran en la raiz del proyecto
 
